@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wander - Find your happy place</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&display=swap');
+        
+        .font-fraunces {
+            font-family: 'Fraunces', serif;
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+    <!-- Limited Time Offer Banner -->
+    <div class="bg-black text-white py-2 text-center text-sm border-b border-white/10">
+        <span class="inline-flex items-center">
+            <span class="mr-2">🎉</span>
+            Limited-time offer. 15% off discount waiting for you at checkout (expires soon)
+        </span>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-black/90 backdrop-blur-sm">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-8">
+                    <a href="/" class="flex items-center">
+                        <svg class="w-8 h-8 mr-2" viewBox="0 0 40 40" fill="none" xmlns="https://www.wander.com/_next/static/media/wander-logo.873cb23c.svg">
+                            <path d="M20 40C31.0457 40 40 31.0457 40 20C40 8.9543 31.0457 0 20 0C8.9543 0 0 8.9543 0 20C0 31.0457 8.9543 40 20 40ZM15.4315 10.0789C15.4315 10.0789 15.4315 10.0789 15.4315 10.0789L15.4315 10.079C15.4315 10.079 15.4315 10.079 15.4315 10.0789ZM24.8596 10.0789C24.8596 10.0789 24.8596 10.0789 24.8596 10.0789L24.8596 10.079C24.8596 10.079 24.8596 10.079 24.8596 10.0789ZM20.1456 29.9211C25.1751 29.9211 29.2544 25.8418 29.2544 20.8123C29.2544 15.7828 25.1751 11.7035 20.1456 11.7035C15.1161 11.7035 11.0368 15.7828 11.0368 20.8123C11.0368 25.8418 15.1161 29.9211 20.1456 29.9211Z" fill="white"/>
+                        </svg>
+                        <span class="text-2xl font-bold font-fraunces">Wander</span>
+                    </a>
+                    <button class="px-4 py-2 rounded-full border border-white/20 hover:bg-white/10 flex items-center">
+                        <i class="fas fa-search mr-2 opacity-60"></i>
+                        Wherever
+                    </button>
+                    <button class="px-4 py-2 rounded-full border border-white/20 hover:bg-white/10 flex items-center">
+                        <i class="far fa-calendar mr-2 opacity-60"></i>
+                        Whenever
+                    </button>
+                    <button class="px-4 py-2 rounded-full border border-white/20 hover:bg-white/10 flex items-center">
+                        <i class="far fa-user mr-2 opacity-60"></i>
+                        Whoever
+                    </button>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="px-4 py-2 rounded-full bg-white text-black hover:bg-gray-100 font-medium">
+                        Unlock access and rewards
+                        <i class="fas fa-chevron-right ml-1 text-xs"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="container mx-auto px-4 pt-32 pb-8 text-center">
+        <h1 class="text-6xl font-bold mb-4 font-fraunces">Find your happy place.</h1>
+        <p class="text-xl text-white/80 mb-8 max-w-3xl mx-auto">Book a Wander with inspiring views, hotel-grade amenities, dreamy beds, top-tier cleaning and 24/7 concierge service. It's a vacation home, but better.</p>
+        
+        <!-- Join Counter -->
+        <div class="flex items-center justify-center space-x-2 mb-8">
+            <div class="flex -space-x-2">
+                <img src="https://i.pravatar.cc/32?img=1" class="w-8 h-8 rounded-full border-2 border-black" alt="User">
+                <img src="https://i.pravatar.cc/32?img=2" class="w-8 h-8 rounded-full border-2 border-black" alt="User">
+                <img src="https://i.pravatar.cc/32?img=3" class="w-8 h-8 rounded-full border-2 border-black" alt="User">
+                <img src="https://i.pravatar.cc/32?img=4" class="w-8 h-8 rounded-full border-2 border-black" alt="User">
+                <img src="https://i.pravatar.cc/32?img=5" class="w-8 h-8 rounded-full border-2 border-black" alt="User">
+            </div>
+            <span class="text-white/80">Join 434,715 Wanderers and counting...</span>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="max-w-4xl mx-auto bg-white/5 backdrop-blur-sm rounded-2xl p-4 border border-white/10">
+            <div class="flex items-center space-x-4">
+                <button class="flex items-center space-x-2 px-4 py-3 rounded-xl hover:bg-white/10 flex-1 text-left">
+                    <i class="fas fa-search text-white/60"></i>
+                    <span>Wherever</span>
+                </button>
+                <button class="flex items-center space-x-2 px-4 py-3 rounded-xl hover:bg-white/10 flex-1 text-left">
+                    <i class="far fa-calendar text-white/60"></i>
+                    <span>Whenever</span>
+                </button>
+                <button class="flex items-center space-x-2 px-4 py-3 rounded-xl hover:bg-white/10 flex-1 text-left">
+                    <i class="far fa-user text-white/60"></i>
+                    <span>Whoever</span>
+                </button>
+                <button class="px-4 py-3 rounded-xl bg-white/10 hover:bg-white/20">
+                    <i class="fas fa-sliders-h"></i>
+                    <span class="ml-2">Filter</span>
+                </button>
+                <div class="relative flex-1">
+                    <div class="absolute inset-y-0 left-3 flex items-center pointer-events-none">
+                        <i class="fas fa-robot text-white/60"></i>
+                    </div>
+                    <input type="text" placeholder="Search anything with WanderAI" class="w-full pl-10 pr-4 py-3 bg-transparent border border-white/20 rounded-xl focus:outline-none focus:border-white/40">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Categories -->
+    <div class="pt-20 pb-4 overflow-x-auto">
+        <div class="container mx-auto px-4">
+            <div class="flex space-x-6">
+                <button class="text-white/80 hover:text-white whitespace-nowrap">All locations</button>
+                <button class="text-white/80 hover:text-white whitespace-nowrap">Near me</button>
+                <button class="text-white/80 hover:text-white whitespace-nowrap">Ocean</button>
+                <button class="text-white/80 hover:text-white whitespace-nowrap">Mountain</button>
+                <button class="text-white/80 hover:text-white whitespace-nowrap">Forest</button>
+                <button class="text-white/80 hover:text-white whitespace-nowrap">Lake</button>
+                <button class="text-white/80 hover:text-white whitespace-nowrap">Desert</button>
+                <button class="text-white/80 hover:text-white whitespace-nowrap">Urban</button>
+                <button class="text-white/80 hover:text-white whitespace-nowrap">Families</button>
+                <button class="text-white/80 hover:text-white whitespace-nowrap">Groups</button>
+                <button class="text-white/80 hover:text-white whitespace-nowrap">Pet-friendly</button>
+                <button class="text-white/80 hover:text-white whitespace-nowrap">Golf</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Property Grid -->
+    <div class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <!-- Property Card 1 -->
+            <div class="group cursor-pointer">
+                <div class="relative aspect-[4/3] rounded-lg overflow-hidden mb-4">
+                    <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233" alt="Luxury home" class="w-full h-full object-cover">
+                    <button class="absolute top-4 right-4 p-2 rounded-full bg-black/20 hover:bg-black/40">
+                        <i class="far fa-heart text-white"></i>
+                    </button>
+                </div>
+                <div class="space-y-2">
+                    <div class="flex justify-between items-start">
+                        <h3 class="font-semibold">Wander Truckee Pines</h3>
+                        <div class="flex items-center">
+                            <i class="fas fa-star text-sm mr-1"></i>
+                            <span>4.5</span>
+                        </div>
+                    </div>
+                    <p class="text-white/60">TRUCKEE, CALIFORNIA</p>
+                    <div class="flex items-center space-x-4 text-sm text-white/80">
+                        <span><i class="fas fa-bed mr-2"></i>4 beds</span>
+                        <span><i class="fas fa-bath mr-2"></i>3 baths</span>
+                        <span><i class="fas fa-user-friends mr-2"></i>10 guests</span>
+                    </div>
+                    <p class="text-sm">Next avail. Apr 18 to Apr 25</p>
+                </div>
+            </div>
+
+            <!-- Property Card 2 -->
+            <div class="group cursor-pointer">
+                <div class="relative aspect-[4/3] rounded-lg overflow-hidden mb-4">
+                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750" alt="Luxury home" class="w-full h-full object-cover">
+                    <button class="absolute top-4 right-4 p-2 rounded-full bg-black/20 hover:bg-black/40">
+                        <i class="far fa-heart text-white"></i>
+                    </button>
+                </div>
+                <div class="space-y-2">
+                    <div class="flex justify-between items-start">
+                        <h3 class="font-semibold">Wander Malibu Shores</h3>
+                        <div class="flex items-center">
+                            <i class="fas fa-star text-sm mr-1"></i>
+                            <span>4.8</span>
+                        </div>
+                    </div>
+                    <p class="text-white/60">MALIBU, CALIFORNIA</p>
+                    <div class="flex items-center space-x-4 text-sm text-white/80">
+                        <span><i class="fas fa-bed mr-2"></i>5 beds</span>
+                        <span><i class="fas fa-bath mr-2"></i>4 baths</span>
+                        <span><i class="fas fa-user-friends mr-2"></i>12 guests</span>
+                    </div>
+                    <p class="text-sm">Next avail. May 1 to May 8</p>
+                </div>
+            </div>
+
+            <!-- Property Card 3 -->
+            <div class="group cursor-pointer">
+                <div class="relative aspect-[4/3] rounded-lg overflow-hidden mb-4">
+                    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9" alt="Luxury home" class="w-full h-full object-cover">
+                    <button class="absolute top-4 right-4 p-2 rounded-full bg-black/20 hover:bg-black/40">
+                        <i class="far fa-heart text-white"></i>
+                    </button>
+                </div>
+                <div class="space-y-2">
+                    <div class="flex justify-between items-start">
+                        <h3 class="font-semibold">Wander Mountain View</h3>
+                        <div class="flex items-center">
+                            <i class="fas fa-star text-sm mr-1"></i>
+                            <span>4.7</span>
+                        </div>
+                    </div>
+                    <p class="text-white/60">ASPEN, COLORADO</p>
+                    <div class="flex items-center space-x-4 text-sm text-white/80">
+                        <span><i class="fas fa-bed mr-2"></i>6 beds</span>
+                        <span><i class="fas fa-bath mr-2"></i>5 baths</span>
+                        <span><i class="fas fa-user-friends mr-2"></i>14 guests</span>
+                    </div>
+                    <p class="text-sm">Next avail. Apr 20 to Apr 27</p>
+                </div>
+            </div>
+
+            <!-- Property Card 4 -->
+            <div class="group cursor-pointer">
+                <div class="relative aspect-[4/3] rounded-lg overflow-hidden mb-4">
+                    <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811" alt="Luxury home" class="w-full h-full object-cover">
+                    <button class="absolute top-4 right-4 p-2 rounded-full bg-black/20 hover:bg-black/40">
+                        <i class="far fa-heart text-white"></i>
+                    </button>
+                </div>
+                <div class="space-y-2">
+                    <div class="flex justify-between items-start">
+                        <h3 class="font-semibold">Wander Lake Tahoe</h3>
+                        <div class="flex items-center">
+                            <i class="fas fa-star text-sm mr-1"></i>
+                            <span>4.9</span>
+                        </div>
+                    </div>
+                    <p class="text-white/60">LAKE TAHOE, NEVADA</p>
+                    <div class="flex items-center space-x-4 text-sm text-white/80">
+                        <span><i class="fas fa-bed mr-2"></i>5 beds</span>
+                        <span><i class="fas fa-bath mr-2"></i>4 baths</span>
+                        <span><i class="fas fa-user-friends mr-2"></i>12 guests</span>
+                    </div>
+                    <p class="text-sm">Next avail. May 5 to May 12</p>
+                </div>
+            </div>
+
+            <!-- Property Card 5 -->
+            <div class="group cursor-pointer">
+                <div class="relative aspect-[4/3] rounded-lg overflow-hidden mb-4">
+                    <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6" alt="Luxury home" class="w-full h-full object-cover">
+                    <button class="absolute top-4 right-4 p-2 rounded-full bg-black/20 hover:bg-black/40">
+                        <i class="far fa-heart text-white"></i>
+                    </button>
+                </div>
+                <div class="space-y-2">
+                    <div class="flex justify-between items-start">
+                        <h3 class="font-semibold">Wander Desert Oasis</h3>
+                        <div class="flex items-center">
+                            <i class="fas fa-star text-sm mr-1"></i>
+                            <span>4.6</span>
+                        </div>
+                    </div>
+                    <p class="text-white/60">SCOTTSDALE, ARIZONA</p>
+                    <div class="flex items-center space-x-4 text-sm text-white/80">
+                        <span><i class="fas fa-bed mr-2"></i>4 beds</span>
+                        <span><i class="fas fa-bath mr-2"></i>3.5 baths</span>
+                        <span><i class="fas fa-user-friends mr-2"></i>8 guests</span>
+                    </div>
+                    <p class="text-sm">Next avail. Apr 25 to May 2</p>
+                </div>
+            </div>
+
+            <!-- Property Card 6 -->
+            <div class="group cursor-pointer">
+                <div class="relative aspect-[4/3] rounded-lg overflow-hidden mb-4">
+                    <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773" alt="Luxury home" class="w-full h-full object-cover">
+                    <button class="absolute top-4 right-4 p-2 rounded-full bg-black/20 hover:bg-black/40">
+                        <i class="far fa-heart text-white"></i>
+                    </button>
+                </div>
+                <div class="space-y-2">
+                    <div class="flex justify-between items-start">
+                        <h3 class="font-semibold">Wander Beachfront Villa</h3>
+                        <div class="flex items-center">
+                            <i class="fas fa-star text-sm mr-1"></i>
+                            <span>4.9</span>
+                        </div>
+                    </div>
+                    <p class="text-white/60">MIAMI BEACH, FLORIDA</p>
+                    <div class="flex items-center space-x-4 text-sm text-white/80">
+                        <span><i class="fas fa-bed mr-2"></i>7 beds</span>
+                        <span><i class="fas fa-bath mr-2"></i>6 baths</span>
+                        <span><i class="fas fa-user-friends mr-2"></i>16 guests</span>
+                    </div>
+                    <p class="text-sm">Next avail. May 10 to May 17</p>
+                </div>
+            </div>
+
+            <!-- Property Card 7 -->
+            <div class="group cursor-pointer">
+                <div class="relative aspect-[4/3] rounded-lg overflow-hidden mb-4">
+                    <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914" alt="Luxury home" class="w-full h-full object-cover">
+                    <button class="absolute top-4 right-4 p-2 rounded-full bg-black/20 hover:bg-black/40">
+                        <i class="far fa-heart text-white"></i>
+                    </button>
+                </div>
+                <div class="space-y-2">
+                    <div class="flex justify-between items-start">
+                        <h3 class="font-semibold">Wander Forest Retreat</h3>
+                        <div class="flex items-center">
+                            <i class="fas fa-star text-sm mr-1"></i>
+                            <span>4.7</span>
+                        </div>
+                    </div>
+                    <p class="text-white/60">PORTLAND, OREGON</p>
+                    <div class="flex items-center space-x-4 text-sm text-white/80">
+                        <span><i class="fas fa-bed mr-2"></i>3 beds</span>
+                        <span><i class="fas fa-bath mr-2"></i>2.5 baths</span>
+                        <span><i class="fas fa-user-friends mr-2"></i>6 guests</span>
+                    </div>
+                    <p class="text-sm">Next avail. Apr 22 to Apr 29</p>
+                </div>
+            </div>
+
+            <!-- Property Card 8 -->
+            <div class="group cursor-pointer">
+                <div class="relative aspect-[4/3] rounded-lg overflow-hidden mb-4">
+                    <img src="https://images.unsplash.com/photo-1523217582562-09d0def993a6" alt="Luxury home" class="w-full h-full object-cover">
+                    <button class="absolute top-4 right-4 p-2 rounded-full bg-black/20 hover:bg-black/40">
+                        <i class="far fa-heart text-white"></i>
+                    </button>
+                </div>
+                <div class="space-y-2">
+                    <div class="flex justify-between items-start">
+                        <h3 class="font-semibold">Wander Lakefront Estate</h3>
+                        <div class="flex items-center">
+                            <i class="fas fa-star text-sm mr-1"></i>
+                            <span>4.8</span>
+                        </div>
+                    </div>
+                    <p class="text-white/60">LAKE GENEVA, WISCONSIN</p>
+                    <div class="flex items-center space-x-4 text-sm text-white/80">
+                        <span><i class="fas fa-bed mr-2"></i>8 beds</span>
+                        <span><i class="fas fa-bath mr-2"></i>6.5 baths</span>
+                        <span><i class="fas fa-user-friends mr-2"></i>18 guests</span>
+                    </div>
+                    <p class="text-sm">Next avail. May 15 to May 22</p>
+                </div>
+            </div>
+
+            <!-- Property Card 9 -->
+            <div class="group cursor-pointer">
+                <div class="relative aspect-[4/3] rounded-lg overflow-hidden mb-4">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Luxury home" class="w-full h-full object-cover">
+                    <button class="absolute top-4 right-4 p-2 rounded-full bg-black/20 hover:bg-black/40">
+                        <i class="far fa-heart text-white"></i>
+                    </button>
+                </div>
+                <div class="space-y-2">
+                    <div class="flex justify-between items-start">
+                        <h3 class="font-semibold">Wander City Penthouse</h3>
+                        <div class="flex items-center">
+                            <i class="fas fa-star text-sm mr-1"></i>
+                            <span>4.9</span>
+                        </div>
+                    </div>
+                    <p class="text-white/60">NEW YORK CITY, NEW YORK</p>
+                    <div class="flex items-center space-x-4 text-sm text-white/80">
+                        <span><i class="fas fa-bed mr-2"></i>3 beds</span>
+                        <span><i class="fas fa-bath mr-2"></i>3.5 baths</span>
+                        <span><i class="fas fa-user-friends mr-2"></i>6 guests</span>
+                    </div>
+                    <p class="text-sm">Next avail. Apr 28 to May 5</p>
+                </div>
+            </div>
+
+            <!-- Property Card 10 -->
+            <div class="group cursor-pointer">
+                <div class="relative aspect-[4/3] rounded-lg overflow-hidden mb-4">
+                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c" alt="Luxury home" class="w-full h-full object-cover">
+                    <button class="absolute top-4 right-4 p-2 rounded-full bg-black/20 hover:bg-black/40">
+                        <i class="far fa-heart text-white"></i>
+                    </button>
+                </div>
+                <div class="space-y-2">
+                    <div class="flex justify-between items-start">
+                        <h3 class="font-semibold">Wander Mountain Lodge</h3>
+                        <div class="flex items-center">
+                            <i class="fas fa-star text-sm mr-1"></i>
+                            <span>4.7</span>
+                        </div>
+                    </div>
+                    <p class="text-white/60">PARK CITY, UTAH</p>
+                    <div class="flex items-center space-x-4 text-sm text-white/80">
+                        <span><i class="fas fa-bed mr-2"></i>6 beds</span>
+                        <span><i class="fas fa-bath mr-2"></i>4.5 baths</span>
+                        <span><i class="fas fa-user-friends mr-2"></i>14 guests</span>
+                    </div>
+                    <p class="text-sm">Next avail. May 8 to May 15</p>
+                </div>
+            </div>
+
+            <!-- Property Card 11 -->
+            <div class="group cursor-pointer">
+                <div class="relative aspect-[4/3] rounded-lg overflow-hidden mb-4">
+                    <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3" alt="Luxury home" class="w-full h-full object-cover">
+                    <button class="absolute top-4 right-4 p-2 rounded-full bg-black/20 hover:bg-black/40">
+                        <i class="far fa-heart text-white"></i>
+                    </button>
+                </div>
+                <div class="space-y-2">
+                    <div class="flex justify-between items-start">
+                        <h3 class="font-semibold">Wander Vineyard Estate</h3>
+                        <div class="flex items-center">
+                            <i class="fas fa-star text-sm mr-1"></i>
+                            <span>4.8</span>
+                        </div>
+                    </div>
+                    <p class="text-white/60">NAPA VALLEY, CALIFORNIA</p>
+                    <div class="flex items-center space-x-4 text-sm text-white/80">
+                        <span><i class="fas fa-bed mr-2"></i>5 beds</span>
+                        <span><i class="fas fa-bath mr-2"></i>4.5 baths</span>
+                        <span><i class="fas fa-user-friends mr-2"></i>10 guests</span>
+                    </div>
+                    <p class="text-sm">Next avail. May 12 to May 19</p>
+                </div>
+            </div>
+
+            <!-- Property Card 12 -->
+            <div class="group cursor-pointer">
+                <div class="relative aspect-[4/3] rounded-lg overflow-hidden mb-4">
+                    <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d" alt="Luxury home" class="w-full h-full object-cover">
+                    <button class="absolute top-4 right-4 p-2 rounded-full bg-black/20 hover:bg-black/40">
+                        <i class="far fa-heart text-white"></i>
+                    </button>
+                </div>
+                <div class="space-y-2">
+                    <div class="flex justify-between items-start">
+                        <h3 class="font-semibold">Wander Island Paradise</h3>
+                        <div class="flex items-center">
+                            <i class="fas fa-star text-sm mr-1"></i>
+                            <span>5.0</span>
+                        </div>
+                    </div>
+                    <p class="text-white/60">MAUI, HAWAII</p>
+                    <div class="flex items-center space-x-4 text-sm text-white/80">
+                        <span><i class="fas fa-bed mr-2"></i>4 beds</span>
+                        <span><i class="fas fa-bath mr-2"></i>3.5 baths</span>
+                        <span><i class="fas fa-user-friends mr-2"></i>8 guests</span>
+                    </div>
+                    <p class="text-sm">Next avail. May 20 to May 27</p>
+                </div>
+            </div>
+
+            <!-- Property Card 13 -->
+            <div class="group cursor-pointer">
+                <div class="relative aspect-[4/3] rounded-lg overflow-hidden mb-4">
+                    <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde" alt="Luxury home" class="w-full h-full object-cover">
+                    <button class="absolute top-4 right-4 p-2 rounded-full bg-black/20 hover:bg-black/40">
+                        <i class="far fa-heart text-white"></i>
+                    </button>
+                </div>
+                <div class="space-y-2">
+                    <div class="flex justify-between items-start">
+                        <h3 class="font-semibold">Wander Ranch Retreat</h3>
+                        <div class="flex items-center">
+                            <i class="fas fa-star text-sm mr-1"></i>
+                            <span>4.7</span>
+                        </div>
+                    </div>
+                    <p class="text-white/60">JACKSON HOLE, WYOMING</p>
+                    <div class="flex items-center space-x-4 text-sm text-white/80">
+                        <span><i class="fas fa-bed mr-2"></i>5 beds</span>
+                        <span><i class="fas fa-bath mr-2"></i>4 baths</span>
+                        <span><i class="fas fa-user-friends mr-2"></i>12 guests</span>
+                    </div>
+                    <p class="text-sm">Next avail. Apr 30 to May 7</p>
+                </div>
+            </div>
+
+            <!-- Property Card 14 -->
+            <div class="group cursor-pointer">
+                <div class="relative aspect-[4/3] rounded-lg overflow-hidden mb-4">
+                    <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea" alt="Luxury home" class="w-full h-full object-cover">
+                    <button class="absolute top-4 right-4 p-2 rounded-full bg-black/20 hover:bg-black/40">
+                        <i class="far fa-heart text-white"></i>
+                    </button>
+                </div>
+                <div class="space-y-2">
+                    <div class="flex justify-between items-start">
+                        <h3 class="font-semibold">Wander Coastal Haven</h3>
+                        <div class="flex items-center">
+                            <i class="fas fa-star text-sm mr-1"></i>
+                            <span>4.9</span>
+                        </div>
+                    </div>
+                    <p class="text-white/60">NEWPORT, RHODE ISLAND</p>
+                    <div class="flex items-center space-x-4 text-sm text-white/80">
+                        <span><i class="fas fa-bed mr-2"></i>6 beds</span>
+                        <span><i class="fas fa-bath mr-2"></i>5.5 baths</span>
+                        <span><i class="fas fa-user-friends mr-2"></i>14 guests</span>
+                    </div>
+                    <p class="text-sm">Next avail. May 25 to Jun 1</p>
+                </div>
+            </div>
+
+            <!-- Property Card 15 -->
+            <div class="group cursor-pointer">
+                <div class="relative aspect-[4/3] rounded-lg overflow-hidden mb-4">
+                    <img src="https://images.unsplash.com/photo-1600573472550-8090b5e0745e" alt="Luxury home" class="w-full h-full object-cover">
+                    <button class="absolute top-4 right-4 p-2 rounded-full bg-black/20 hover:bg-black/40">
+                        <i class="far fa-heart text-white"></i>
+                    </button>
+                </div>
+                <div class="space-y-2">
+                    <div class="flex justify-between items-start">
+                        <h3 class="font-semibold">Wander Lake House</h3>
+                        <div class="flex items-center">
+                            <i class="fas fa-star text-sm mr-1"></i>
+                            <span>4.8</span>
+                        </div>
+                    </div>
+                    <p class="text-white/60">LAKE PLACID, NEW YORK</p>
+                    <div class="flex items-center space-x-4 text-sm text-white/80">
+                        <span><i class="fas fa-bed mr-2"></i>4 beds</span>
+                        <span><i class="fas fa-bath mr-2"></i>3 baths</span>
+                        <span><i class="fas fa-user-friends mr-2"></i>8 guests</span>
+                    </div>
+                    <p class="text-sm">Next avail. May 18 to May 25</p>
+                </div>
+            </div>
+
+            <!-- Property Card 16 -->
+            <div class="group cursor-pointer">
+                <div class="relative aspect-[4/3] rounded-lg overflow-hidden mb-4">
+                    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9" alt="Luxury home" class="w-full h-full object-cover">
+                    <button class="absolute top-4 right-4 p-2 rounded-full bg-black/20 hover:bg-black/40">
+                        <i class="far fa-heart text-white"></i>
+                    </button>
+                </div>
+                <div class="space-y-2">
+                    <div class="flex justify-between items-start">
+                        <h3 class="font-semibold">Wander Desert Villa</h3>
+                        <div class="flex items-center">
+                            <i class="fas fa-star text-sm mr-1"></i>
+                            <span>4.7</span>
+                        </div>
+                    </div>
+                    <p class="text-white/60">PALM SPRINGS, CALIFORNIA</p>
+                    <div class="flex items-center space-x-4 text-sm text-white/80">
+                        <span><i class="fas fa-bed mr-2"></i>3 beds</span>
+                        <span><i class="fas fa-bath mr-2"></i>2.5 baths</span>
+                        <span><i class="fas fa-user-friends mr-2"></i>6 guests</span>
+                    </div>
+                    <p class="text-sm">Next avail. May 5 to May 12</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Wander Difference Section -->
+    <div class="relative py-32 my-16">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent z-10"></div>
+            <img src="https://images.unsplash.com/photo-1623718649591-311775a30c43" alt="Family enjoying vacation" class="w-full h-full object-cover">
+        </div>
+        
+        <!-- Content -->
+        <div class="relative z-20 container mx-auto px-4 text-center">
+            <div class="max-w-4xl mx-auto">
+                <p class="text-sm font-medium tracking-wider uppercase mb-4 text-white/80">IT'S A VACATION HOME, BUT BETTER</p>
+                <h2 class="text-5xl font-fraunces font-semibold mb-6">The Wander difference</h2>
+                <p class="text-xl text-white/90 leading-relaxed">
+                    Wander is different because we combine the quality of a luxury hotel with the comfort of a private vacation home. Only the top 1% of vacation homes are available on Wander.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="container mx-auto px-4 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div>
+                <div class="mb-6">
+                    <svg class="w-12 h-12" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M24 4L41.2 32H6.8L24 4Z" stroke="white" stroke-width="2"/>
+                        <circle cx="24" cy="38" r="6" stroke="white" stroke-width="2"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-4">Only the top 1% of homes</h3>
+                <p class="text-white/80">We'll never not look like the pictures. We select homes in the most beautiful destinations and pour our hearts into making them magical so you can leave your stress at the door.</p>
+            </div>
+            <div>
+                <div class="mb-6">
+                    <svg class="w-12 h-12" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 20C8 13.3726 13.3726 8 20 8H28C34.6274 8 40 13.3726 40 20V40H8V20Z" stroke="white" stroke-width="2"/>
+                        <path d="M16 24H32" stroke="white" stroke-width="2"/>
+                        <path d="M16 32H32" stroke="white" stroke-width="2"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-4">Hotel-grade amenities</h3>
+                <p class="text-white/80">We'll never leave you with nothing to do. From workstations with super fast WiFi to gyms, pools, and saunas, our locations are set up for you to effortlessly blend work and play.</p>
+            </div>
+            <div>
+                <div class="mb-6">
+                    <svg class="w-12 h-12" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="24" cy="24" r="20" stroke="white" stroke-width="2"/>
+                        <path d="M24 16V24L30 30" stroke="white" stroke-width="2"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-4">24/7 Concierge service</h3>
+                <p class="text-white/80">We'll never leave you hanging. Our text-based Concierge is always available to help make your trip the best ever – from house questions to activity recommendations and more.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Additional Features -->
+    <div class="container mx-auto px-4 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div>
+                <div class="mb-6">
+                    <svg class="w-12 h-12" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 36L24 12L36 36H12Z" stroke="white" stroke-width="2"/>
+                        <circle cx="24" cy="28" r="2" fill="white"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-4">Inspiring and stunning views</h3>
+                <p class="text-white/80">We'll never leave you uninspired. Every Wander is located in an incredible setting with stunning views that will have you feeling inspired and refreshed in no time. Adventure awaits.</p>
+            </div>
+            <div>
+                <div class="mb-6">
+                    <svg class="w-12 h-12" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 20H40V40H8V20Z" stroke="white" stroke-width="2"/>
+                        <path d="M14 14L34 14" stroke="white" stroke-width="2"/>
+                        <path d="M20 8L28 8" stroke="white" stroke-width="2"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-4">Meticulous cleaning</h3>
+                <p class="text-white/80">We'll never have you check in to a dirty house with crusty ketchup in the fridge. Our cleaning teams are meticulous about quality. We won't leave you a list of chores at check out either.</p>
+            </div>
+            <div>
+                <div class="mb-6">
+                    <svg class="w-12 h-12" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="24" cy="24" r="16" stroke="white" stroke-width="2"/>
+                        <path d="M24 16V24H32" stroke="white" stroke-width="2"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-4">Safety and security</h3>
+                <p class="text-white/80">We'll never pass you off to a stranger. All of the Wander locations on our platform are hand-picked by us and managed to our incredibly high, industry-leading safety standards.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10 mt-16">
+        <div class="container mx-auto px-4 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Wander</h3>
+                    <p class="text-white/60">Find your happy place ®</p>
+                    <p class="text-white/60 mt-2">© 2024 Wander.com, Inc.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">FOR GUESTS</h4>
+                    <ul class="space-y-2 text-white/60">
+                        <li><a href="#" class="hover:text-white">Blog</a></li>
+                        <li><a href="#" class="hover:text-white">Events</a></li>
+                        <li><a href="#" class="hover:text-white">Press</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">FOR PARTNERS</h4>
+                    <ul class="space-y-2 text-white/60">
+                        <li><a href="#" class="hover:text-white">Wander Operated</a></li>
+                        <li><a href="#" class="hover:text-white">Wander Branded</a></li>
+                        <li><a href="#" class="hover:text-white">Own With Wander</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">FOR EVERYONE</h4>
+                    <ul class="space-y-2 text-white/60">
+                        <li><a href="#" class="hover:text-white">About Wander</a></li>
+                        <li><a href="#" class="hover:text-white">Customer reviews</a></li>
+                        <li><a href="#" class="hover:text-white">Join the team</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 
